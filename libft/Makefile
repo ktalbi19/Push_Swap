@@ -1,31 +1,38 @@
-# Makefile for lib
+NAME = libft.a
+
+CFLAGS = -Wall -Wextra -Werror -I. -c
+
+SRCS = ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memmove.c \
+	   ft_memchr.c ft_memcmp.c ft_strlen.c ft_isalpha.c ft_isdigit.c \
+	   ft_isalnum.c ft_isascii.c ft_isprint.c ft_toupper.c ft_tolower.c \
+	   ft_strchr.c ft_strrchr.c ft_strncmp.c ft_strlcpy.c ft_strlcat.c \
+	   ft_strnstr.c ft_atoi.c ft_calloc.c ft_strdup.c ft_substr.c \
+	   ft_strjoin.c ft_strtrim.c ft_split.c ft_itoa.c ft_strmapi.c \
+	   ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c \
+	   ft_itoa_uns.c ft_itoa_hex.c ft_itoa_pointer.c \
+	   ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c \
+	   ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c
+
+OBJS = $(SRCS:.c=.o)
+
 CC = gcc
-AR = ar
 
-CFLAGS += -std=c99 # Define which version of the C standard to use
-CFLAGS += -Wall # Enable the 'all' set of warnings
-CFLAGS += -Werror # Treat all warnings as error
-CFLAGS += -Wshadow # Warn when shadowing variables
-CFLAGS += -Wextra # Enable additional warnings
-CFLAGS += -Wno-unused-variable #Unused parameters
-CFLAGS += -Wno-unused-command-line-argument
+RM = rm -f
 
-SOURCES=$(wildcard *.c)
-OBJECTS=$(SOURCES:.c=.o)
-LIBFILE = libft.a # NEED TO BE CHANGED ! Name of the lib
+all: $(NAME)
 
-all: $(SOURCES) $(LIBFILE) soft-clean
+$(NAME): $(OBJS)
+	ar rcs $(NAME) $(OBJS)
 
-lib: $(LIBFILE)
+$(OBJS): $(SRCS)
+	$(CC) $(CFLAGS) $(SRCS)
 
-$(LIBFILE): $(OBJECTS)
-	$(AR) r $@ $(OBJECTS)
+clean:
+	$(RM) $(OBJS)
 
-*.o:
-	$(CC) -o $@ -c $< $(CFLAGS)
+fclean: clean
+	$(RM) $(NAME)
 
-clean: 
-	@rm -rf *.o *.a
+re: fclean all
 
-soft-clean: 
-	@rm -rf *.o
+.PHONY:	all clean fclean re

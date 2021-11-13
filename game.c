@@ -6,7 +6,7 @@
 /*   By: ktalbi <ktalbi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 15:22:42 by ktalbi            #+#    #+#             */
-/*   Updated: 2021/11/09 20:31:56 by ktalbi           ###   ########.fr       */
+/*   Updated: 2021/11/12 17:31:14 by ktalbi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ void	insert(t_stack *stack, const char *c)
 		free(words[i]);
 		i++;
 	}
+	free(words);
 }
 
 void	ft_fill_stack(int argc, const char **argv,

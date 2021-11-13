@@ -6,7 +6,7 @@
 /*   By: ktalbi <ktalbi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 15:48:56 by ktalbi            #+#    #+#             */
-/*   Updated: 2021/11/11 17:25:55 by ktalbi           ###   ########.fr       */
+/*   Updated: 2021/11/12 18:31:55 by ktalbi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,11 @@ typedef struct game
 
 void	ft_main_reduc(t_game *game);
 int		contains_not_marked(t_stack *stack);
+
+//len_5
+int		ft_len_5(t_game *game);
+void	ft_sort_len_5_2(t_game *game);
+void	ft_sort_len_5_1(t_game *game);
 
 //game.c
 t_game	*init(int argc, const char **argv);

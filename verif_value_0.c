@@ -6,7 +6,7 @@
 /*   By: ktalbi <ktalbi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/10 15:47:54 by ktalbi            #+#    #+#             */
-/*   Updated: 2021/11/10 15:48:11 by ktalbi           ###   ########.fr       */
+/*   Updated: 2021/11/12 17:25:30 by ktalbi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,7 @@ int	verif_2_argc(const char **argv)
 		}
 		i++;
 	}
+	ft_free_split(str);
 	return (1);
 }
 

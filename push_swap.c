@@ -6,7 +6,7 @@
 /*   By: ktalbi <ktalbi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 15:18:51 by ktalbi            #+#    #+#             */
-/*   Updated: 2021/11/11 18:28:51 by ktalbi           ###   ########.fr       */
+/*   Updated: 2021/11/12 17:48:21 by ktalbi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,8 +53,11 @@ int	main(int argc, const char **argv)
 	if (game->stack_a->length == 3)
 	{
 		ft_len_3(game);
+		ft_free_final(game);
 		return (0);
 	}
+	if (ft_len_5(game) == 1)
+		return (0);
 	max = mark_all(game);
 	ft_main_reduc(game);
 	while (game->stack_b->length)

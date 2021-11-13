@@ -6,7 +6,7 @@
 /*   By: ktalbi <ktalbi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 15:49:15 by ktalbi            #+#    #+#             */
-/*   Updated: 2021/11/11 18:27:42 by ktalbi           ###   ########.fr       */
+/*   Updated: 2021/11/12 15:37:38 by ktalbi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,6 @@ void	destroy(t_stack *stack);
 int		max(t_stack *stack);
 int		min(t_stack *stack);
 int		find_index(t_stack *stack, int value);
-//void	print_list(t_stack *stack);
+void	print_list(t_stack *stack);
 
 #endif
